@@ -1,4 +1,6 @@
-echo  "--------------------------Insert Into Table-----------------------------"           
+
+
+        echo  "--------------------------Insert Into Table-----------------------------"           
         echo  "________________________________________________________________________"
 
         read -p "Enter Table Name You Wanna insert Into: "  tbName
@@ -8,8 +10,8 @@ echo  "--------------------------Insert Into Table-----------------------------"
                         echo "PRIMARY KEY MUST BE UNIQUE" 
                                 for (( i=1 ; i <= $cntColumns ; i++ ));   #operation
                                 do
-                                        colname=$(awk -v"n=$i" 'BEGIN{FS=":"}{print $n}' $tbName); #first line
-                                        coltype=$(awk -v"n=$i" 'BEGIN{FS=":"}{print $n}' $tbName.type); 
+                                        colname=`awk -v"n=$i" 'BEGIN{FS=":"}{print $n}' $tbName | head -1` ; #first line
+                                        coltype=`awk -v"n=$i" 'BEGIN{FS=":"}{print $n}' $tbName.type | head -1` ; 
                                         if [[ $i -eq 1 ]] ;
                                         then 
                                                 check=0
@@ -51,11 +53,10 @@ echo  "--------------------------Insert Into Table-----------------------------"
                                         #end of loop
                                 done
                 else	        
-                        tput setaf 7  #color
+                        
                         echo  "------------------------------------------------------------------------"
-                        echo "Sorry $tbName Doesn't Exist";
+                        echo "$tbName Doesn't Exist";
                         echo "__________________________________________________________________"
-                        tput setaf 7  #color
+                        
                 fi  
-        . TableMenu.sh
-}
+        TableMenu.sh
