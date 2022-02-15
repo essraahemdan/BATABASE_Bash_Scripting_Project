@@ -8,7 +8,7 @@ then
    cd $databaseName
    clear 
    echo "Welcome To $databaseName DataBase :)"
-#   . select2.sh
+   . TableMenu.sh
 else
    echo "FATAL $databaseName dosen't exist!"
     
@@ -23,10 +23,10 @@ else
             	;;
         2)
             
-		clear ; . createdb.sh  ; break
+		clear ; . createNewDB.sh  ; break
             	;;
 	3)
-	       	clear ; . select.sh ; clear ; break
+	       	clear ; . DBMenu.sh ; clear ; break
         	;;
 	    
 	 * ) echo "Invalid Option"
