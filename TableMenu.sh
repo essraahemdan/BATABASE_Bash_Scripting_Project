@@ -8,7 +8,7 @@ do
 		2 ) clear ; . listTables.sh        ; . TableMenu.sh;;
 		3 ) clear ; . dropTable.sh         ; . TableMenu.sh;;
 		4 ) clear ; . insertIntoTable.sh     ; . TableMenu.sh;;
-		5 ) clear ; . selectFromTable.sh   ; . TableMenu.sh;;
+		5 ) clear ; . SelectFromTable.sh   ; . TableMenu.sh;;
 		6 ) clear ; . truncateTable.sh     ; . TableMenu.sh;;
 		7 ) clear ;    cd ..               ; . DBMenu.sh;;
 		* ) clear ; echo "Invalid choice!" ; . TableMenu.sh ; 
